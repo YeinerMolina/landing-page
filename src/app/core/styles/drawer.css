@@ -1,0 +1,78 @@
+/**
+ * Drawer Component Styles
+ * 
+ * Estilos específicos para el componente PrimeNG p-drawer
+ * Utiliza variables CSS oficiales de PrimeNG y del sistema de diseño de la aplicación
+ * 
+ * @author Yeiner Molina
+ * @version 1.0.0
+ */
+
+/* ========================================
+   DRAWER CONTAINER STYLES
+   ======================================== */
+
+/* Estilos principales del drawer usando variables CSS oficiales de PrimeNG */
+.p-drawer {
+  background: var(--surface-ground);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Variables CSS personalizadas para PrimeNG */
+:root {
+  --p-drawer-background: var(--surface-section);
+  --p-drawer-content-padding: var(--content-padding);
+}
+
+/* ========================================
+   DRAWER HEADER STYLES
+   ======================================== */
+
+.p-drawer-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ========================================
+   DRAWER CLOSE BUTTON STYLES
+   ======================================== */
+
+.p-drawer-close-button {
+  color: var(--text-secondary);
+  background: var(--surface-hover);
+  border: 1px solid var(--border-color);
+}
+
+.p-drawer-close-button:hover {
+  background: var(--primary-color);
+  color: var(--primary-contrast-color);
+}
+
+/* ========================================
+   RESPONSIVE BEHAVIOR
+   ======================================== */
+
+/* El drawer se adapta automáticamente a diferentes tamaños de pantalla
+   mediante las clases utilitarias de Tailwind aplicadas en el HTML */
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Mejoras de accesibilidad para el drawer */
+.p-drawer {
+  /* Asegurar que el drawer sea accesible por teclado */
+  outline: none;
+}
+
+.p-drawer-close-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+/* Los estilos del drawer se adaptan automáticamente al modo oscuro
+   mediante las variables CSS definidas en styles.css */

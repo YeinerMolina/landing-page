@@ -1,6 +1,8 @@
+/* Core Styles */
+@import './app/core/styles/colors.css';
+@import './app/core/styles/drawer.css';
+
 /* TailwindCSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* You can add global styles to this file, and also import other style files */
