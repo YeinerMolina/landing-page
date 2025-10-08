@@ -1,0 +1,83 @@
+.theme-toggle-btn {
+  @apply transition-all duration-300 ease-in-out;
+  @apply hover:scale-105 active:scale-95;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply shadow-md hover:shadow-lg;
+  
+  /* Responsive design - Mobile-first approach */
+  @apply text-sm px-3 py-2;
+  @apply md:text-base md:px-4 md:py-2.5;
+  @apply lg:px-5 lg:py-3;
+}
+
+.theme-toggle-btn.dark-mode {
+  @apply focus:ring-slate-500;
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.theme-toggle-btn.dark-mode:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* ===== LIGHT MODE STYLES ===== */
+.theme-toggle-btn.light-mode {
+  @apply focus:ring-amber-500;
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.theme-toggle-btn.light-mode:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* ===== ICON ANIMATIONS ===== */
+.theme-toggle-btn .pi {
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.theme-toggle-btn:hover .pi {
+  @apply rotate-12;
+}
+
+.theme-toggle-btn.dark-mode .pi-moon {
+  @apply text-slate-600;
+}
+
+.theme-toggle-btn.light-mode .pi-sun {
+  @apply text-amber-500;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.theme-toggle-btn:focus-visible {
+  @apply ring-2 ring-offset-2;
+}
+
+.theme-toggle-btn.dark-mode:focus-visible {
+  @apply ring-slate-500;
+}
+
+.theme-toggle-btn.light-mode:focus-visible {
+  @apply ring-amber-500;
+}
+
+
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes theme-switch {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.theme-toggle-btn:active {
+  animation: theme-switch 0.3s ease-in-out;
+}

@@ -1,17 +1,14 @@
+import { providePrimeNG } from 'primeng/config';
+
 import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
+    ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection
 } from '@angular/core';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
+import Aura from '@primeuix/themes/aura';
 
 import { routes } from './app.routes';
-import { providePrimeNG } from 'primeng/config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +19,10 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: 'Aura',
+        preset: Aura,
+        options: {
+            darkModeSelector: 'data-theme="dark"'
+        }
       },
     }),
   ],

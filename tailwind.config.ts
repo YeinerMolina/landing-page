@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import PrimeUI from 'tailwindcss-primeui';
 
 export default {
   content: ['./src/**/*.{html,ts}'],
@@ -69,6 +70,7 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
+    PrimeUI
   ],
   future: {
     hoverOnlyWhenSupported: true,

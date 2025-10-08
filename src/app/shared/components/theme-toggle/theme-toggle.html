@@ -1,0 +1,17 @@
+<!-- Theme Toggle Button -->
+<p-button
+  [icon]="isDarkMode() ? 'pi pi-moon' : 'pi pi-sun'"
+  [severity]="isDarkMode() ? 'secondary' : 'info'"
+  [outlined]="true"
+  [rounded]="true"
+  size="small"
+  [ngClass]="{
+    'theme-toggle-btn': true,
+    'dark-mode': isDarkMode(),
+    'light-mode': !isDarkMode()
+  }"
+  (onClick)="toggleTheme()"
+  [attr.aria-label]="`Cambiar a ${isDarkMode() ? 'modo claro' : 'modo oscuro'}`"
+  [attr.title]="`Cambiar a ${isDarkMode() ? 'modo claro' : 'modo oscuro'}`"
+>
+</p-button>
