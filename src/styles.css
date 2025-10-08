@@ -1,6 +1,8 @@
 /* Core Styles */
-@import './app/core/styles/colors.css';
-@import './app/core/styles/drawer.css';
+@import "./app/core/styles/theme.css";
+@import "./app/core/styles/drawer.css";
+@import "./app/core/styles/primeng-theme.css";
+@import "primeicons/primeicons.css";
 
 /* TailwindCSS */
 @tailwind base;

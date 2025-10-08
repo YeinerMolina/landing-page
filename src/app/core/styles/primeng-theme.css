@@ -1,0 +1,246 @@
+/* PrimeNG Custom Theme Configuration */
+/* Este archivo personaliza los componentes de PrimeNG para usar nuestro tema */
+
+/* Botones */
+.p-button {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color-text);
+  transition: all 0.2s ease-in-out;
+}
+
+.p-button:not(:disabled):hover {
+  background: rgb(var(--color-primary-hover));
+  border-color: rgb(var(--color-primary-hover));
+}
+
+.p-button.p-button-secondary {
+  background: rgb(var(--color-secondary));
+  border-color: rgb(var(--color-secondary));
+}
+
+.p-button.p-button-secondary:not(:disabled):hover {
+  background: rgb(var(--color-secondary-hover));
+  border-color: rgb(var(--color-secondary-hover));
+}
+
+.p-button.p-button-success {
+  background: rgb(var(--color-success));
+  border-color: rgb(var(--color-success));
+}
+
+.p-button.p-button-warning {
+  background: rgb(var(--color-warning));
+  border-color: rgb(var(--color-warning));
+}
+
+.p-button.p-button-danger {
+  background: rgb(var(--color-error));
+  border-color: rgb(var(--color-error));
+}
+
+.p-button.p-button-info {
+  background: rgb(var(--color-info));
+  border-color: rgb(var(--color-info));
+}
+
+/* Cards */
+.p-card {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.p-card .p-card-title {
+  color: var(--text-color);
+}
+
+.p-card .p-card-subtitle {
+  color: var(--text-color-secondary);
+}
+
+.p-card .p-card-content {
+  color: var(--text-color);
+}
+
+/* Inputs */
+.p-inputtext {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: var(--focus-ring);
+  border-color: var(--primary-color);
+}
+
+/* Dropdown */
+.p-dropdown {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-dropdown:not(.p-disabled):hover {
+  border-color: var(--primary-color);
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: var(--focus-ring);
+  border-color: var(--primary-color);
+}
+
+.p-dropdown-panel {
+  background: var(--surface-overlay);
+  border: 1px solid var(--surface-border);
+}
+
+.p-dropdown-item {
+  color: var(--text-color);
+}
+
+.p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  background: rgba(var(--color-primary), 0.04);
+  color: var(--text-color);
+}
+
+.p-dropdown-item.p-highlight {
+  background: var(--primary-color);
+  color: var(--primary-color-text);
+}
+
+/* Dialog */
+.p-dialog {
+  background: var(--surface-overlay);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-dialog .p-dialog-header {
+  background: var(--surface-overlay);
+  border-bottom: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-dialog .p-dialog-title {
+  color: var(--text-color);
+}
+
+.p-dialog .p-dialog-content {
+  background: var(--surface-overlay);
+  color: var(--text-color);
+}
+
+/* Menu */
+.p-menu {
+  background: var(--surface-overlay);
+  border: 1px solid var(--surface-border);
+}
+
+.p-menu .p-menuitem-link {
+  color: var(--text-color);
+}
+
+.p-menu .p-menuitem-link:not(.p-disabled):hover {
+  background: rgba(var(--color-primary), 0.04);
+  color: var(--text-color);
+}
+
+.p-menu .p-menuitem-link:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: var(--focus-ring);
+  background: rgba(var(--color-primary), 0.12);
+  color: var(--text-color);
+}
+
+/* Toast */
+.p-toast .p-toast-message.p-toast-message-info {
+  background: rgba(var(--color-info), 0.9);
+  border: 1px solid rgb(var(--color-info));
+  color: #ffffff;
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+  background: rgba(var(--color-success), 0.9);
+  border: 1px solid rgb(var(--color-success));
+  color: #ffffff;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn {
+  background: rgba(var(--color-warning), 0.9);
+  border: 1px solid rgb(var(--color-warning));
+  color: #ffffff;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+  background: rgba(var(--color-error), 0.9);
+  border: 1px solid rgb(var(--color-error));
+  color: #ffffff;
+}
+
+/* Tabla */
+.p-datatable {
+  background: var(--surface-card);
+  color: var(--text-color);
+}
+
+.p-datatable .p-datatable-header {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background: var(--surface-card);
+  color: var(--text-color);
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border: 1px solid var(--surface-border);
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background: rgba(var(--color-primary), 0.02);
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: rgba(var(--color-primary), 0.04);
+}
+
+/* Sidebar */
+.p-sidebar {
+  background: var(--surface-overlay);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+/* Panel */
+.p-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-panel .p-panel-header {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--surface-border);
+  color: var(--text-color);
+}
+
+.p-panel .p-panel-content {
+  background: var(--surface-card);
+  color: var(--text-color);
+}

@@ -1,0 +1,63 @@
+:root[data-theme="light"] {
+  /* TailwindCSS Variables (RGB format for alpha support) */
+  --color-background: 249 250 251; /* #F9FAFB */
+  --color-surface: 255 255 255; /* #FFFFFF */
+  --color-text-primary: 28 30 38; /* #1C1E26 */
+  --color-text-secondary: 75 85 99; /* #4B5563 */
+  --color-text-muted: 156 163 175; /* #9CA3AF */
+  --color-border: 209 213 219; /* #D1D5DB */
+  --color-primary: 108 58 255; /* #6C3AFF */
+  --color-primary-hover: 88 40 235; /* #5828EB */
+  --color-secondary: 0 182 255; /* #00B6FF */
+  --color-secondary-hover: 0 162 235; /* #00A2EB */
+  --color-accent: 231 56 194; /* #E738C2 */
+  --color-accent-hover: 211 36 174; /* #D324AE */
+  --color-success: 34 197 94; /* #22C55E */
+  --color-warning: 245 158 11; /* #F59E0B */
+  --color-error: 239 68 68; /* #EF4444 */
+  --color-info: 59 130 246; /* #3B82F6 */
+
+  /* PrimeNG Variables */
+  --primary-color: #6c3aff;
+  --primary-color-text: #ffffff;
+  --surface-ground: #f9fafb;
+  --surface-card: #ffffff;
+  --surface-overlay: #ffffff;
+  --surface-border: #d1d5db;
+  --text-color: #1c1e26;
+  --text-color-secondary: #4b5563;
+  --border-color: #d1d5db;
+  --focus-ring: 0 0 0 0.2rem rgba(108, 58, 255, 0.2);
+}
+
+:root[data-theme="dark"] {
+  /* TailwindCSS Variables (RGB format for alpha support) */
+  --color-background: 11 12 16; /* #0B0C10 */
+  --color-surface: 22 24 33; /* #161821 */
+  --color-text-primary: 234 234 245; /* #EAEAF5 */
+  --color-text-secondary: 177 178 201; /* #B1B2C9 */
+  --color-text-muted: 107 114 128; /* #6B7280 */
+  --color-border: 39 41 58; /* #27293A */
+  --color-primary: 123 76 255; /* #7B4CFF */
+  --color-primary-hover: 143 96 255; /* #8F60FF */
+  --color-secondary: 44 217 255; /* #2CD9FF */
+  --color-secondary-hover: 64 237 255; /* #40EDFF */
+  --color-accent: 255 76 251; /* #FF4CFB */
+  --color-accent-hover: 255 96 255; /* #FF60FF */
+  --color-success: 74 222 128; /* #4ADE80 */
+  --color-warning: 251 191 36; /* #FBBF24 */
+  --color-error: 248 113 113; /* #F87171 */
+  --color-info: 96 165 250; /* #60A5FA */
+
+  /* PrimeNG Variables */
+  --primary-color: #7b4cff;
+  --primary-color-text: #ffffff;
+  --surface-ground: #0b0c10;
+  --surface-card: #161821;
+  --surface-overlay: #161821;
+  --surface-border: #27293a;
+  --text-color: #eaeaf5;
+  --text-color-secondary: #b1b2c9;
+  --border-color: #27293a;
+  --focus-ring: 0 0 0 0.2rem rgba(123, 76, 255, 0.2);
+}
