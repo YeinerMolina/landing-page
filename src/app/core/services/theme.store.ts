@@ -1,32 +1,40 @@
 import { isPlatformBrowser } from '@angular/common';
-import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+import {
+  computed,
+  inject,
+  Injectable,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 
 export enum ThemeMode {
   Dark = 'dark',
-  Light = 'light'
+  Light = 'light',
 }
 
 /**
  * Servicio centralizado para el manejo de temas de la aplicación
  */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeStore {
   private readonly THEME_STORAGE_KEY = 'app-theme';
   private readonly platformId = inject(PLATFORM_ID);
-  
+
   // Signal interno para el tema actual
   private readonly _currentTheme = signal<ThemeMode>(this.getInitialTheme());
-  
+
   // Signal público de solo lectura para el tema actual
   readonly currentTheme = this._currentTheme.asReadonly();
-  
+
   // Signal computado para verificar si es modo oscuro
   readonly isDarkMode = computed(() => this._currentTheme() === ThemeMode.Dark);
-  
+
   // Signal computado para verificar si es modo claro
-  readonly isLightMode = computed(() => this._currentTheme() === ThemeMode.Light);
+  readonly isLightMode = computed(
+    () => this._currentTheme() === ThemeMode.Light
+  );
 
   /**
    * Cambia el tema actual
@@ -54,7 +62,10 @@ export class ThemeStore {
    */
   private getInitialTheme(): ThemeMode {
     if (isPlatformBrowser(this.platformId)) {
-      return this.loadThemeFromStorage() ?? this.getSystemThemePreference();
+      const theme =
+        this.loadThemeFromStorage() ?? this.getSystemThemePreference();
+      this.applyThemeToDocument(theme);
+      return theme;
     }
     return ThemeMode.Dark;
   }
@@ -63,13 +74,12 @@ export class ThemeStore {
    * Carga el tema desde localStorage
    */
   private loadThemeFromStorage(): ThemeMode | null {
-    if (!isPlatformBrowser(this.platformId)) {
-      return null;
-    }
-    
+    if (!isPlatformBrowser(this.platformId)) return null;
     try {
       const stored = localStorage.getItem(this.THEME_STORAGE_KEY);
-      return [ThemeMode.Dark, ThemeMode.Light].includes(stored as ThemeMode) ? stored as ThemeMode : null;
+      return [ThemeMode.Dark, ThemeMode.Light].includes(stored as ThemeMode)
+        ? (stored as ThemeMode)
+        : null;
     } catch {
       return null;
     }
@@ -80,7 +90,9 @@ export class ThemeStore {
    */
   private getSystemThemePreference(): ThemeMode {
     if (isPlatformBrowser(this.platformId) && window.matchMedia) {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? ThemeMode.Dark : ThemeMode.Light;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? ThemeMode.Dark
+        : ThemeMode.Light;
     }
     return ThemeMode.Dark;
   }
