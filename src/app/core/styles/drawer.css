@@ -40,7 +40,6 @@
 .p-drawer-close-button {
   color: var(--text-secondary);
   background: var(--surface-hover);
-  border: 1px solid var(--border-color);
 }
 
 .p-drawer-close-button:hover {

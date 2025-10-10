@@ -24,22 +24,21 @@ export class ThemeStore {
 
   // Signal interno para el tema actual
   private readonly _currentTheme = signal<ThemeMode>(this.getInitialTheme());
-
   // Signal público de solo lectura para el tema actual
-  readonly currentTheme = this._currentTheme.asReadonly();
-
+  public readonly currentTheme = this._currentTheme.asReadonly();
   // Signal computado para verificar si es modo oscuro
-  readonly isDarkMode = computed(() => this._currentTheme() === ThemeMode.Dark);
-
+  public readonly isDarkMode = computed(
+    () => this._currentTheme() === ThemeMode.Dark
+  );
   // Signal computado para verificar si es modo claro
-  readonly isLightMode = computed(
+  public readonly isLightMode = computed(
     () => this._currentTheme() === ThemeMode.Light
   );
 
   /**
    * Cambia el tema actual
    */
-  setTheme(theme: ThemeMode): void {
+  public setTheme(theme: ThemeMode): void {
     this._currentTheme.set(theme);
     if (isPlatformBrowser(this.platformId)) {
       const theme = this._currentTheme();
@@ -51,7 +50,7 @@ export class ThemeStore {
   /**
    * Alterna entre modo oscuro y claro
    */
-  toggleTheme(): ThemeMode {
+  public toggleTheme(): ThemeMode {
     const newTheme = this.isDarkMode() ? ThemeMode.Light : ThemeMode.Dark;
     this.setTheme(newTheme);
     return newTheme;
@@ -112,7 +111,7 @@ export class ThemeStore {
   /**
    * Resetea al tema del sistema
    */
-  resetToSystemPreference(): void {
+  public resetToSystemPreference(): void {
     if (isPlatformBrowser(this.platformId)) {
       const systemTheme = this.getSystemThemePreference();
       this.setTheme(systemTheme);
@@ -123,7 +122,7 @@ export class ThemeStore {
   /**
    * Limpia el tema almacenado
    */
-  clearStoredTheme(): void {
+  public clearStoredTheme(): void {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem(this.THEME_STORAGE_KEY);
     }

@@ -1,11 +1,11 @@
 import { ButtonModule } from 'primeng/button';
-import { DrawerModule } from 'primeng/drawer';
 import { RippleModule } from 'primeng/ripple';
 
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 
 import { ThemeStore } from '../../../core/services/theme.store';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
+import { MobileSidebarOrganism } from './components/mobile-sidebar/mobile-sidebar';
 
 /**
  * Componente Header reutilizable que contiene la navegación principal de la aplicación
@@ -13,7 +13,7 @@ import { ThemeToggle } from '../theme-toggle/theme-toggle';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonModule, DrawerModule, RippleModule, ThemeToggle],
+  imports: [ButtonModule, RippleModule, ThemeToggle, MobileSidebarOrganism],
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush

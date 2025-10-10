@@ -1,0 +1,89 @@
+<p-drawer
+  [(visible)]="visible"
+  position="right"
+  [modal]="true"
+  [dismissible]="true"
+  [showCloseIcon]="true"
+  styleClass="w-80 sm:w-96"
+  (onHide)="close.emit()"
+>
+  <!-- Header del Sidebar -->
+  <ng-template pTemplate="header">
+    <div class="flex items-center space-x-3 p-2">
+      <i class="pi pi-home text-2xl text-blue-600"></i>
+      <span class="text-xl font-bold text-gray-900">TITULO</span>
+    </div>
+  </ng-template>
+
+  <!-- Contenido del Sidebar -->
+  <div class="flex flex-col space-y-2 p-4">
+    <!-- Navegación -->
+    <div class="space-y-1">
+      <h3
+        class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3"
+      >
+        Navegación
+      </h3>
+
+      <header-nav-link
+        href="#inicio"
+        label="Inicio"
+        icon="pi pi-home"
+        (onClick)="close.emit()"
+      ></header-nav-link>
+      <header-nav-link
+        href="#servicios"
+        label="Servicios"
+        icon="pi pi-cog"
+        (onClick)="close.emit()"
+      ></header-nav-link>
+      <header-nav-link
+        href="#sobre-mi"
+        label="Sobre Mí"
+        icon="pi pi-user"
+        (onClick)="close.emit()"
+      ></header-nav-link>
+      <header-nav-link
+        href="#proyectos"
+        label="Proyectos"
+        icon="pi pi-briefcase"
+        (onClick)="close.emit()"
+      ></header-nav-link>
+      <header-nav-link
+        href="#contacto"
+        label="Contacto"
+        icon="pi pi-envelope"
+        (onClick)="close.emit()"
+      ></header-nav-link>
+    </div>
+
+    <!-- Separador -->
+    <div class="border-t border-gray-200 my-4"></div>
+
+    <!-- Theme Toggle Mobile -->
+    <header-theme-toggle-row
+      [theme]="theme()"
+      [isDarkMode]="isDarkMode()"
+      (themeChange)="themeChange.emit()"
+    ></header-theme-toggle-row>
+
+    <!-- Botón de Contacto -->
+    <div class="px-4">
+      <p-button
+        label="Contactar"
+        icon="pi pi-envelope"
+        class="w-full"
+        size="large"
+        (onClick)="close.emit()"
+      ></p-button>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="px-4 pt-4 text-center">
+      <p class="text-xs text-gray-500">
+        © 2024 Landing Page<br />
+        Desarrollado con Angular 20
+      </p>
+    </div>
+  </div>
+</p-drawer>

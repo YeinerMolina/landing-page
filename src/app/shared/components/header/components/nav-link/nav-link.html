@@ -1,0 +1,9 @@
+<a
+  [href]="href"
+  class="py-3.5 px-6 rounded-lg my-1 transition-all duration-300 ease-in-out font-medium border border-transparent text-slate-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 hover:translate-x-2 active:translate-x-1 active:scale-95 flex items-center group"
+  (click)="onClick.emit()"
+  pRipple
+>
+  <i [class]="icon + ' mr-3 text-gray-400 group-hover:text-blue-600'"></i>
+  <span class="font-medium">{{ label }}</span>
+</a>

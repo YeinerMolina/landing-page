@@ -1,7 +1,13 @@
 import { ButtonModule } from 'primeng/button';
 
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  output,
+} from '@angular/core';
 import { ThemeMode } from '../../../core/services/theme.store';
 
 @Component({
@@ -10,17 +16,15 @@ import { ThemeMode } from '../../../core/services/theme.store';
   imports: [CommonModule, ButtonModule],
   templateUrl: './theme-toggle.html',
   styleUrl: './theme-toggle.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeToggle {
   // Input signal con valor por defecto 'dark'
-  theme = input<ThemeMode>(ThemeMode.Dark);
-  
+  theme = input.required<ThemeMode>();
+  // Input para verificar si es modo oscuro
+  isDarkMode = input<boolean>(false);
   // Output signal para two-way binding
   themeChange = output<void>();
-  
-  // Signal computado para verificar si es modo oscuro
-  protected isDarkMode = computed(() => this.theme() === ThemeMode.Dark);
 
   /**
    * Solo emite el evento de cambio de tema
