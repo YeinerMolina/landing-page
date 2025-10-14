@@ -1,13 +1,29 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { HeroSection } from './components/hero-section/hero-section';
+import { HomeTechStack } from './components/tech-stack/home-tech-stack';
+import { HomeAbout } from './components/about/home-about';
+import { HomeProjects } from './components/projects/home-projects';
+import { HomeServices } from './components/services/home-services';
+
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [ButtonModule, CardModule, InputTextModule, RippleModule],
+  imports: [
+    ButtonModule,
+    CardModule,
+    InputTextModule,
+    RippleModule,
+    HeroSection,
+    HomeTechStack,
+    HomeAbout,
+    HomeProjects,
+    HomeServices,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

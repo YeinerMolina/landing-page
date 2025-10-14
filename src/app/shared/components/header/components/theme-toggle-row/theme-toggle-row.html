@@ -1,10 +1,6 @@
 <div class="px-4 mb-4">
-  <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-    <span class="text-sm font-medium text-gray-700">Tema</span>
-    <theme-toggle
-      [theme]="theme()"
-      [isDarkMode]="isDarkMode()"
-      (themeChange)="themeChange.emit()"
-    ></theme-toggle>
+  <div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-border" role="group" aria-labelledby="themeRowLabel">
+    <span class="text-sm font-medium text-secondary" id="themeRowLabel">Theme</span>
+    <theme-toggle aria-labelledby="themeRowLabel"></theme-toggle>
   </div>
 </div>

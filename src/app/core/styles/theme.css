@@ -1,7 +1,8 @@
 :root[data-theme="light"] {
   /* TailwindCSS Variables (RGB format for alpha support) */
   --color-background: 249 250 251; /* #F9FAFB */
-  --color-surface: 255 255 255; /* #FFFFFF */
+  --color-surface: 248 250 252; /* #f8fafc */
+  --color-surface-foreground: 11 16 32; /* #0b1020 */
   --color-text-primary: 28 30 38; /* #1C1E26 */
   --color-text-secondary: 75 85 99; /* #4B5563 */
   --color-text-muted: 156 163 175; /* #9CA3AF */
@@ -33,11 +34,12 @@
 :root[data-theme="dark"] {
   /* TailwindCSS Variables (RGB format for alpha support) */
   --color-background: 11 12 16; /* #0B0C10 */
-  --color-surface: 22 24 33; /* #161821 */
+  --color-surface: 11 16 32; /* #0b1020 */
+  --color-surface-foreground: 248 250 252; /* #f8fafc */
   --color-text-primary: 234 234 245; /* #EAEAF5 */
   --color-text-secondary: 177 178 201; /* #B1B2C9 */
   --color-text-muted: 107 114 128; /* #6B7280 */
-  --color-border: 39 41 58; /* #27293A */
+  --color-border: 74 77 101; /* #4A4D65 */
   --color-primary: 123 76 255; /* #7B4CFF */
   --color-primary-hover: 143 96 255; /* #8F60FF */
   --color-secondary: 44 217 255; /* #2CD9FF */
@@ -58,6 +60,6 @@
   --surface-border: #27293a;
   --text-color: #eaeaf5;
   --text-color-secondary: #b1b2c9;
-  --border-color: #27293a;
+  --border-color: #4a4d65;
   --focus-ring: 0 0 0 0.2rem rgba(123, 76, 255, 0.2);
 }

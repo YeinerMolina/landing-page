@@ -1,0 +1,66 @@
+<!-- Contenido del Sidebar -->
+<div class="flex flex-col space-y-2 p-4 text-text-primary" role="document">
+  <!-- Navegación -->
+  <nav class="space-y-1" aria-label="Main navigation">
+    <h3
+      class="text-sm font-semibold text-secondary uppercase tracking-wider mb-3"
+    >
+      Navigation
+    </h3>
+
+    <header-nav-link
+      href="#inicio"
+      label="Home"
+      icon="pi pi-home"
+      (onClick)="close.emit()"
+    ></header-nav-link>
+    <header-nav-link
+      href="#servicios"
+      label="Services"
+      icon="pi pi-cog"
+      (onClick)="close.emit()"
+    ></header-nav-link>
+    <header-nav-link
+      href="#sobre-mi"
+      label="About Me"
+      icon="pi pi-user"
+      (onClick)="close.emit()"
+    ></header-nav-link>
+    <header-nav-link
+      href="#proyectos"
+      label="Projects"
+      icon="pi pi-briefcase"
+      (onClick)="close.emit()"
+    ></header-nav-link>
+    <header-nav-link
+      href="#contacto"
+      label="Contact"
+      icon="pi pi-envelope"
+      (onClick)="close.emit()"
+    ></header-nav-link>
+  </nav>
+
+  <!-- Separador -->
+  <div class="border-t border-border my-4"></div>
+
+  <!-- Theme Toggle Mobile -->
+  <header-theme-toggle-row></header-theme-toggle-row>
+
+  <!-- Botón de Contacto -->
+  <div class="flex justify-center items-center" aria-label="Contact action">
+    <p-button
+      label="Contact"
+      icon="pi pi-envelope"
+      size="large"
+      (onClick)="close.emit()"
+    ></p-button>
+  </div>
+
+  <!-- Información adicional -->
+  <div class="px-4 pt-4 text-center" aria-label="Additional information">
+    <copyright />
+    <p class="text-xs text-secondary mt-1" aria-label="Technologies used">
+      Built with Angular 20
+    </p>
+  </div>
+</div>

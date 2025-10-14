@@ -1,16 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
-import {
-  computed,
-  inject,
-  Injectable,
-  PLATFORM_ID,
-  signal,
-} from '@angular/core';
+import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
-export enum ThemeMode {
-  Dark = 'dark',
-  Light = 'light',
-}
+import { ThemeMode } from './theme.store.interface';
 
 /**
  * Servicio centralizado para el manejo de temas de la aplicación
@@ -102,8 +93,6 @@ export class ThemeStore {
   private applyThemeToDocument(theme: ThemeMode): void {
     if (isPlatformBrowser(this.platformId)) {
       const root = document.documentElement;
-      root.classList.remove(ThemeMode.Dark, ThemeMode.Light);
-      root.classList.add(theme);
       root.setAttribute('data-theme', theme);
     }
   }

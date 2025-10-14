@@ -1,0 +1,4 @@
+/* Átomo Copyright: estilos mínimos; usa utilidades Tailwind para paleta y tipografía */
+:host {
+  display: block;
+}

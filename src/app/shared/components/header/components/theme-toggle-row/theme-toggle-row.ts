@@ -1,14 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  input,
-  Input,
-  output,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeToggle } from '../../../theme-toggle/theme-toggle';
-import { ThemeMode } from '../../../../../core/services';
 
 @Component({
   selector: 'header-theme-toggle-row',
@@ -17,8 +8,4 @@ import { ThemeMode } from '../../../../../core/services';
   templateUrl: './theme-toggle-row.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ThemeToggleRow {
-  theme = input.required<ThemeMode>();
-  isDarkMode = input<boolean>(false);
-  themeChange = output<void>();
-}
+export class ThemeToggleRow {}

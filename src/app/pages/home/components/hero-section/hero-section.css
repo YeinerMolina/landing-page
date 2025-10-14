@@ -1,0 +1,41 @@
+/* Estilos esenciales para la sección hero */
+
+:host {
+  display: block;
+}
+
+/* Hero semantic layout */
+.hero-section {
+  @apply min-h-screen flex items-center bg-surface;
+}
+.hero-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24;
+}
+.hero-flex {
+  @apply flex flex-col items-center justify-center gap-8  lg:items-center lg:justify-between;
+}
+
+/* Typography */
+.hero-title {
+  @apply text-5xl sm:text-4xl md:text-7xl font-light leading-tight text-center text-text-primary;
+}
+.hero-subtitle {
+  @apply mt-6 text-lg sm:text-xl text-text-secondary text-center max-w-2xl;
+}
+
+@screen md {
+  .hero-title {
+    line-height: 1.15;
+  }
+}
+
+/* CTA button container and button styles */
+.cta {
+  @apply mt-10 flex justify-center gap-2 md:gap-4 lg:gap-6 lg:justify-start;
+}
+.cta-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-lg bg-primary text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors;
+}
+.cta-button-outline {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-lg bg-transparent text-primary outline outline-2 outline-primary outline-offset-0 hover:bg-primary/10 hover:outline-primary/80 focus-visible:outline-primary focus-visible:outline-offset-2 active:outline-primary/60 transition-all duration-200;
+}

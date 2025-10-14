@@ -1,70 +1,74 @@
 <header class="bg-surface shadow-lg border-b border-border">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <nav
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    aria-label="Top navigation bar"
+  >
     <div class="flex justify-between items-center h-16">
       <!-- Sección izquierda: Icono + Título -->
       <div class="flex items-center space-x-3">
-        <i class="pi pi-home text-2xl text-primary"></i>
-        <span class="text-xl sm:text-2xl font-bold text-primary">TITULO</span>
+        <i class="pi pi-home text-2xl text-text-primary" aria-hidden="true"></i>
+        <span class="text-xl sm:text-2xl font-bold text-text-primary"
+          >YMDEV</span
+        >
       </div>
 
       <!-- Navigation Desktop -->
-      <nav class="hidden md:flex space-x-8">
+      <nav
+        class="hidden md:flex md:gap-4 lg:gap-6"
+        aria-label="Main navigation"
+      >
         <a
           href="#inicio"
-          class="text-secondary hover:text-primary transition-colors duration-200 font-medium"
+          class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
-          Inicio
+          Home
         </a>
         <a
           href="#servicios"
-          class="text-secondary hover:text-primary transition-colors duration-200 font-medium"
+          class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
-          Servicios
+          Services
         </a>
         <a
           href="#proyectos"
-          class="text-secondary hover:text-primary transition-colors duration-200 font-medium"
+          class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
-          Proyectos
+          Projects
         </a>
         <a
           href="#sobre-mi"
-          class="text-secondary hover:text-primary transition-colors duration-200 font-medium"
+          class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
-          Sobre Mí
+          About Me
         </a>
         <a
           href="#contacto"
-          class="text-secondary hover:text-primary transition-colors duration-200 font-medium"
+          class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
-          Contacto
+          Contact
         </a>
       </nav>
 
       <!-- Sección derecha: Botones -->
       <div class="flex items-center space-x-4">
         <!-- Theme Toggle -->
-        <theme-toggle
-          [theme]="currentTheme()"
-          (themeChange)="toggleTheme()"
-          class="hidden sm:block"
-        ></theme-toggle>
+        <theme-toggle class="hidden sm:block"></theme-toggle>
 
         <!-- Botón Contactar Desktop -->
         <p-button
-          label="Contactar"
+          label="Contact"
           icon="pi pi-envelope"
           class="hidden md:block"
-          [outlined]="true"
+          variant="outlined"
           size="small"
         >
         </p-button>
 
         <!-- Botón Contactar Mobile (solo texto) -->
         <p-button
-          label="Contactar"
+          label="Contact"
           class="md:hidden transition-all duration-300 ease-in-out rounded-lg text-slate-700 hover:bg-blue-50 hover:scale-105 active:scale-95"
-          [outlined]="true"
+          variant="outlined"
           size="small"
         >
         </p-button>
@@ -75,6 +79,9 @@
           class="md:hidden transition-all duration-300 ease-in-out rounded-lg text-slate-700 hover:bg-blue-50 hover:scale-105 active:scale-95"
           [text]="true"
           size="small"
+          [attr.aria-label]="'Open navigation menu'"
+          [attr.aria-controls]="'mobileSidebarDrawer'"
+          [attr.aria-expanded]="sidebarVisible()"
           (onClick)="toggleSidebar()"
         >
         </p-button>
@@ -85,8 +92,6 @@
   <!-- Drawer Mobile/Tablet -->
   <header-mobile-sidebar
     [(visible)]="sidebarVisible"
-    [theme]="currentTheme()"
     (close)="closeSidebar()"
-    (themeChange)="toggleTheme()"
   ></header-mobile-sidebar>
 </header>

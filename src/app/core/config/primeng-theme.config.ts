@@ -40,7 +40,7 @@ export const CustomTheme = definePreset(Aura, {
  */
 export const PRIMENG_THEME_OPTIONS = {
   prefix: 'p',
-  darkModeSelector: 'data-theme="dark"',
+  darkModeSelector: '[data-theme="dark"]',
   cssLayer: false,
 } as const;
 

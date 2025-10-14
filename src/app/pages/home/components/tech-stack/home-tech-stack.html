@@ -1,0 +1,10 @@
+<section id="tech" class="py-16 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500">Trusted tools and platforms</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-8 items-center">
+      @for (tech of technologies; track tech) {
+        <div class="text-sm text-gray-700">{{ tech }}</div>
+      }
+    </div>
+  </div>
+</section>
