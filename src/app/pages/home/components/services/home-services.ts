@@ -1,10 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-}
+import { Service } from './interface/service.interface';
 
 /**
  * Component that displays the services section
@@ -14,29 +10,31 @@ interface Service {
   standalone: true,
   templateUrl: './home-services.html',
   styleUrl: './home-services.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeServices {
   readonly services: Service[] = [
     {
       id: 1,
       title: 'Web Application Development',
-      description: 'SPA, SSR, PWA. Focus on performance and maintainability.'
+      description: 'SPA, SSR, PWA. Focus on performance and maintainability.',
     },
     {
       id: 2,
       title: 'APIs & Integrations',
-      description: 'Design and implement REST/GraphQL APIs and third-party integrations.'
+      description:
+        'Design and implement REST/GraphQL APIs and third-party integrations.',
     },
     {
       id: 3,
       title: 'Cloud & DevOps',
-      description: 'CI/CD pipelines, Docker, AWS deployments, monitoring.'
+      description: 'CI/CD pipelines, Docker, AWS deployments, monitoring.',
     },
     {
       id: 4,
       title: 'Maintenance & Optimization',
-      description: 'Performance optimization, code refactoring, and system maintenance.'
-    }
+      description:
+        'Performance optimization, code refactoring, and system maintenance.',
+    },
   ];
 }

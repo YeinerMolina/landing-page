@@ -20,40 +20,50 @@ export default {
           DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
           hover: 'rgb(var(--color-accent-hover) / <alpha-value>)',
         },
-        
+
         // Background and surface
         background: 'rgb(var(--color-background) / <alpha-value>)',
+        foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
         surface: 'rgb(var(--color-surface) / <alpha-value>)',
-        
+
         // Text colors
         text: {
           primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
           secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
           muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
         },
-        
+
         // Border
         border: 'rgb(var(--color-border) / <alpha-value>)',
-        
+
         // Status colors
         success: 'rgb(var(--color-success) / <alpha-value>)',
         warning: 'rgb(var(--color-warning) / <alpha-value>)',
         error: 'rgb(var(--color-error) / <alpha-value>)',
         info: 'rgb(var(--color-info) / <alpha-value>)',
       },
-      
+
       // Custom spacing and other utilities
       spacing: {
         '18': '4.5rem',
         '88': '22rem',
       },
-      
+
+      // Adaptive shadows for light/dark themes
+      boxShadow: {
+        'adaptive-sm': 'var(--shadow-adaptive-sm)',
+        'adaptive': 'var(--shadow-adaptive)',
+        'adaptive-md': 'var(--shadow-adaptive-md)',
+        'adaptive-lg': 'var(--shadow-adaptive-lg)',
+        'adaptive-xl': 'var(--shadow-adaptive-xl)',
+      },
+
       // Custom animations
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-out',
       },
-      
+
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
@@ -70,7 +80,7 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
-    PrimeUI
+    PrimeUI,
   ],
   future: {
     hoverOnlyWhenSupported: true,

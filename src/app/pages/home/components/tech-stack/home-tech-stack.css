@@ -2,4 +2,7 @@
   display: block;
 }
 
+.shadow-image {
+  filter: drop-shadow(0 4px 8px rgba(var(--color-foreground), 0.25));
+}
 /* Additional styles can be added here if needed for tech stack specific styling */
