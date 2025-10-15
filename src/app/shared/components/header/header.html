@@ -18,31 +18,31 @@
         aria-label="Main navigation"
       >
         <a
-          href="#inicio"
+          href="#home"
           class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           Home
         </a>
         <a
-          href="#servicios"
+          href="#services"
           class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           Services
         </a>
         <a
-          href="#proyectos"
+          href="#projects"
           class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           Projects
         </a>
         <a
-          href="#sobre-mi"
+          href="#about"
           class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           About Me
         </a>
         <a
-          href="#contacto"
+          routerLink="/contact"
           class="text-secondary hover:text-text-primary transition-colors duration-200 font-medium"
         >
           Contact
@@ -54,20 +54,10 @@
         <!-- Theme Toggle -->
         <theme-toggle class="hidden sm:block"></theme-toggle>
 
-        <!-- Botón Contactar Desktop -->
-        <p-button
-          label="Contact"
-          icon="pi pi-envelope"
-          class="hidden md:block"
-          variant="outlined"
-          size="small"
-        >
-        </p-button>
-
         <!-- Botón Contactar Mobile (solo texto) -->
         <p-button
           label="Contact"
-          class="md:hidden transition-all duration-300 ease-in-out rounded-lg text-slate-700 hover:bg-blue-50 hover:scale-105 active:scale-95"
+          class="transition-all duration-300 ease-in-out rounded-lg hover:bg-blue-50 hover:scale-105 active:scale-95"
           variant="outlined"
           size="small"
         >
@@ -76,7 +66,7 @@
         <!-- Botón Menu Mobile -->
         <p-button
           icon="pi pi-bars"
-          class="md:hidden transition-all duration-300 ease-in-out rounded-lg text-slate-700 hover:bg-blue-50 hover:scale-105 active:scale-95"
+          class="md:hidden transition-all duration-300 ease-in-out rounded-lg hover:bg-blue-50 hover:scale-105 active:scale-95"
           [text]="true"
           size="small"
           [attr.aria-label]="'Open navigation menu'"

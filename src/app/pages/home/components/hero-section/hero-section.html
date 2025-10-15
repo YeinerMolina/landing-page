@@ -15,14 +15,14 @@
         </p>
       </header>
       <div class="cta">
-        <p-button
-          label="View My Work"
-          styleClass="cta-button"
-          pRipple
-          routerLink="/projects"
-          aria-label="Navigate to my portfolio projects"
-          role="link"
-        />
+        <a href="/projects" routerLink="/projects">
+          <p-button
+            label="View My Work"
+            styleClass="cta-button"
+            pRipple
+            aria-label="Navigate to my portfolio projects"
+          />
+        </a>
 
         <p-button
           label="Contact"
@@ -30,7 +30,6 @@
           pRipple
           routerLink="/contact"
           aria-label="Navigate to contact page"
-          role="link"
         />
       </div>
     </div>

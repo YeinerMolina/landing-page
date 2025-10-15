@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { HomeTechStack } from '../tech-stack/home-tech-stack';
+
 /**
  * Component that displays the about section with developer information
  */
@@ -8,6 +10,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: true,
   templateUrl: './home-about.html',
   styleUrl: './home-about.css',
+  imports: [HomeTechStack],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeAbout {

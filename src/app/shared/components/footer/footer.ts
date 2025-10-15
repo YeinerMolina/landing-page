@@ -1,4 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 import { Copyright } from '../copyright/copyright';
 
 /**
@@ -7,11 +9,9 @@ import { Copyright } from '../copyright/copyright';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [Copyright],
+  imports: [Copyright, RouterModule],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Footer {
-
-}
+export class Footer {}

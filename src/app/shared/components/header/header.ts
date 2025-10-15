@@ -2,6 +2,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
 import { MobileSidebarOrganism } from './components/mobile-sidebar/mobile-sidebar';
@@ -12,7 +13,13 @@ import { MobileSidebarOrganism } from './components/mobile-sidebar/mobile-sideba
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonModule, RippleModule, ThemeToggle, MobileSidebarOrganism],
+  imports: [
+    ButtonModule,
+    RippleModule,
+    ThemeToggle,
+    MobileSidebarOrganism,
+    RouterModule,
+  ],
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

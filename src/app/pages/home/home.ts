@@ -5,11 +5,11 @@ import { RippleModule } from 'primeng/ripple';
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { HeroSection } from './components/hero-section/hero-section';
-import { HomeTechStack } from './components/tech-stack/home-tech-stack';
 import { HomeAbout } from './components/about/home-about';
+import { HeroSection } from './components/hero-section/hero-section';
 import { HomeProjects } from './components/projects/home-projects';
 import { HomeServices } from './components/services/home-services';
+import { HomeTechStack } from './components/tech-stack/home-tech-stack';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,6 @@ import { HomeServices } from './components/services/home-services';
     InputTextModule,
     RippleModule,
     HeroSection,
-    HomeTechStack,
     HomeAbout,
     HomeProjects,
     HomeServices,

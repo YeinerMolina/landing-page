@@ -1,4 +1,5 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+
 import { MainLayout } from './layout/main-layout/main-layout';
 
 @Component({
@@ -7,6 +8,4 @@ import { MainLayout } from './layout/main-layout/main-layout';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('landing-page-app');
-}
+export class App {}

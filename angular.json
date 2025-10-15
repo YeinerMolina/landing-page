@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "landing-page-app": {
+    "ymdev-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -66,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "landing-page-app:build:production"
+              "buildTarget": "ymdev-app:build:production"
             },
             "development": {
-              "buildTarget": "landing-page-app:build:development"
+              "buildTarget": "ymdev-app:build:development"
             }
           },
           "defaultConfiguration": "development"
