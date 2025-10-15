@@ -8,9 +8,12 @@
       >
         <img
           [src]="tech.icon"
-          [alt]="tech.name"
+          [alt]="tech.name + ' logo'"
           class="w-[4rem] h-[4rem] shadow-image rounded"
           loading="lazy"
+          decoding="async"
+          width="64"
+          height="64"
         />
         <figcaption class="text-foreground">{{ tech.name }}</figcaption>
       </figure>

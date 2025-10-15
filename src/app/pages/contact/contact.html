@@ -1,0 +1,91 @@
+<section id="contact" class="py-16 bg-surface" aria-labelledby="contact-title">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <div class="bg-background p-6 rounded-lg shadow-adaptive-md hover:shadow-adaptive-lg transition-shadow duration-300 border border-border text-foreground">
+      <h1 id="contact-title" class="text-2xl font-semibold">Contact</h1>
+      <p class="mt-2 text-text-secondary">
+        Tell me about your project. I typically reply within 24–48 hours.
+      </p>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate class="mt-6 space-y-4" aria-describedby="contact-help">
+        <p id="contact-help" class="sr-only">All fields except Subject are required.</p>
+
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-text-primary">Name *</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            required
+            autocomplete="name"
+            class="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [attr.aria-invalid]="contactForm.get('name')?.invalid && submitted ? 'true' : 'false'"
+            [attr.aria-describedby]="contactForm.get('name')?.invalid && submitted ? 'name-error' : 'name-help'"
+          />
+          <small id="name-help" class="text-text-secondary">Enter your full name.</small>
+          <small id="name-error" class="text-red-600" *ngIf="contactForm.get('name')?.invalid && submitted">Please enter at least 2 characters.</small>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-text-primary">Email *</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            required
+            autocomplete="email"
+            class="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [attr.aria-invalid]="contactForm.get('email')?.invalid && submitted ? 'true' : 'false'"
+            [attr.aria-describedby]="contactForm.get('email')?.invalid && submitted ? 'email-error' : 'email-help'"
+          />
+          <small id="email-help" class="text-text-secondary">We'll use this to reply.</small>
+          <small id="email-error" class="text-red-600" *ngIf="contactForm.get('email')?.invalid && submitted">Please enter a valid email address.</small>
+        </div>
+
+        <!-- Subject -->
+        <div>
+          <label for="subject" class="block text-sm font-medium text-text-primary">Subject (optional)</label>
+          <input
+            id="subject"
+            type="text"
+            formControlName="subject"
+            autocomplete="off"
+            class="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [attr.aria-describedby]="'subject-help'"
+          />
+          <small id="subject-help" class="text-text-secondary">E.g. "SaaS MVP for e-commerce"</small>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-medium text-text-primary">Message *</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            required
+            rows="6"
+            class="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [attr.aria-invalid]="contactForm.get('message')?.invalid && submitted ? 'true' : 'false'"
+            [attr.aria-describedby]="contactForm.get('message')?.invalid && submitted ? 'message-error' : 'message-help'"
+          ></textarea>
+          <small id="message-help" class="text-text-secondary">Include goals, timeline, and budget range if available.</small>
+          <small id="message-error" class="text-red-600" *ngIf="contactForm.get('message')?.invalid && submitted">Please enter at least 10 characters.</small>
+        </div>
+
+        <!-- Honeypot -->
+        <input formControlName="website" type="text" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <!-- Submit -->
+        <div class="flex items-center gap-3">
+          <button type="submit" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-60" [disabled]="sending">
+            {{ sending ? 'Sending…' : 'Send Message' }}
+          </button>
+          <a href="mailto:ingyeinermolina@gmail.com" class="text-sm text-text-primary underline">Prefer email? ingyeinermolina@gmail.com</a>
+        </div>
+
+        <p class="mt-4 text-green-600" *ngIf="success" aria-live="polite">Thanks! I’ll get back to you shortly.</p>
+      </form>
+    </div>
+  </div>
+</section>

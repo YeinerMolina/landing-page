@@ -20,7 +20,7 @@ export class HomeProjects {
       description:
         'Built an Angular dashboard and Node API. Reduced page load time by 40% and improved CI/CD with Docker and AWS.',
       imageUrl: '/path/to/screenshot1.jpg',
-      imageAlt: 'Project 1',
+      imageAlt: 'SaaS dashboard case study screenshot (Angular + Node.js)',
       caseStudyUrl: '#',
     },
     {
@@ -29,7 +29,7 @@ export class HomeProjects {
       description:
         'Developed a full-stack e-commerce solution with Angular frontend and Node.js backend.',
       imageUrl: '/path/to/screenshot2.jpg',
-      imageAlt: 'Project 2',
+      imageAlt: 'E-commerce platform project screenshot (Angular + Node.js)',
       caseStudyUrl: '#',
     },
     {
@@ -38,7 +38,7 @@ export class HomeProjects {
       description:
         'Created a cross-platform mobile application using modern web technologies.',
       imageUrl: '/path/to/screenshot3.jpg',
-      imageAlt: 'Project 3',
+      imageAlt: 'Mobile app project screenshot (Web technologies)',
       caseStudyUrl: '#',
     },
   ];
