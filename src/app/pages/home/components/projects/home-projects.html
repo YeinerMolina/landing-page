@@ -3,27 +3,7 @@
     <h2 class="text-2xl font-semibold">Featured Projects</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
       @for (project of projects; track project.id) {
-      <article
-        class="bg-background p-5 rounded-lg shadow-adaptive-md hover:shadow-adaptive-lg transition-shadow duration-300 border border-border"
-      >
-        <img
-          [src]="project.imageUrl"
-          [alt]="project.imageAlt"
-          class="w-full h-40 object-cover rounded bg-foreground"
-          loading="lazy"
-          decoding="async"
-        />
-        <h3 class="mt-4 font-medium text-foreground">{{ project.title }}</h3>
-        <p class="mt-2 text-sm text-text-secondary">
-          {{ project.description }}
-        </p>
-        <a
-          [href]="project.caseStudyUrl"
-          class="mt-3 inline-block text-text-primary text-sm"
-        >
-          Case study →
-        </a>
-      </article>
+      <project [project]="project" />
       }
     </div>
   </div>

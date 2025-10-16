@@ -1,0 +1,25 @@
+<article
+  class="flex flex-col justify-between bg-background p-5 rounded-lg shadow-adaptive-md hover:shadow-adaptive-lg transition-shadow duration-300 border border-border"
+>
+  @let projectData = project();
+  <div class="flex flex-col gap-2">
+    <img
+      [src]="projectData.imageUrl"
+      [alt]="projectData.imageAlt"
+      class="w-full h-40 object-cover rounded bg-foreground"
+      loading="lazy"
+      decoding="async"
+    />
+    <h3 class="mt-4 font-medium text-foreground">{{ projectData.title }}</h3>
+    <p class="mt-2 text-sm text-text-secondary">
+      {{ projectData.description }}
+    </p>
+  </div>
+
+  <a
+    [href]="projectData.caseStudyUrl"
+    class="mt-3 inline-block text-text-primary text-sm"
+  >
+    Case study →
+  </a>
+</article>

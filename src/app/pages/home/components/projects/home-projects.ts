@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { Project } from './interfaces/projects.interface';
+import { ProjectComponent } from './components/project';
+import { ProjectModel } from './interfaces/projects.interface';
 
 /**
  * Component that displays the featured projects section
@@ -10,10 +11,11 @@ import { Project } from './interfaces/projects.interface';
   standalone: true,
   templateUrl: './home-projects.html',
   styleUrl: './home-projects.css',
+  imports: [ProjectComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeProjects {
-  readonly projects: Project[] = [
+  readonly projects: ProjectModel[] = [
     {
       id: 1,
       title: 'Project Name — SaaS Dashboard',
