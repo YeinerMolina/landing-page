@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  ymdev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: ymdev
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - "4000"
+    volumes:
+      - ./logs:/app/logs
+      - ./public:/app/public:ro
+    networks:
+      - ${NETWORK_NAME}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:4000${HEALTH_CHECK_PATH:-/health}",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=${NETWORK_NAME}"
+      - "traefik.http.routers.ymdev-landing-http.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.ymdev-landing-http.entrypoints=web"
+      - "traefik.http.routers.ymdev-landing-http.middlewares=redirect-to-https"
+      - "traefik.http.routers.ymdev-landing.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.ymdev-landing.entrypoints=websecure"
+      - "traefik.http.routers.ymdev-landing.tls.certresolver=letsencrypt"
+      - "traefik.http.services.ymdev-landing.loadbalancer.server.port=4000"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "project=ymdev-landing"
+      - "environment=${NODE_ENV}"
+      - "service=ymdev"
+
+networks:
+  ${NETWORK_NAME}:
+    external: true

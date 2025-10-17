@@ -1,0 +1,66 @@
+# ===== Archivos y directorios a excluir del contexto Docker =====
+
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build cache
+dist/
+.angular/
+.tmp/
+.cache/
+
+# IDE y sistema
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Archivos de entorno (si se montan externamente)
+.env.local
+.env.*.local
+*.env
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Documentación y CI
+docs/
+README.md
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Formato y lint
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Backups y logs
+*.bak
+*.backup
+logs/
+*.log
+
+# Archivos de Docker
+docker-compose*.yml
+.dockerignore
+
+# SSL
+ssl/
+*.pem
+*.key
+*.crt
