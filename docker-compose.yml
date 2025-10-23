@@ -16,7 +16,7 @@ services:
       - ./logs:/app/logs
       - ./public:/app/public:ro
     networks:
-      - ${NETWORK_NAME}
+      - yei-projects
     healthcheck:
       test:
         [
@@ -33,7 +33,7 @@ services:
       start_period: 40s
     labels:
       - "traefik.enable=true"
-      - "traefik.docker.network=${NETWORK_NAME}"
+      - "traefik.docker.network=yei-projects"
       - "traefik.http.routers.ymdev-landing-http.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.ymdev-landing-http.entrypoints=web"
       - "traefik.http.routers.ymdev-landing-http.middlewares=redirect-to-https"
@@ -47,5 +47,5 @@ services:
       - "service=ymdev"
 
 networks:
-  ${NETWORK_NAME}:
+  yei-projects:
     external: true

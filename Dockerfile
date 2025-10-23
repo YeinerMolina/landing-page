@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm ci --silent
 COPY . .
 
-RUN npm run build:ssr
+RUN npm run build:prod
 
 # ===== STAGE 2: Production =====
 FROM node:20-alpine AS production
@@ -24,4 +24,4 @@ EXPOSE 4000
 ENV NODE_ENV=production
 ENV PORT=4000
 
-CMD ["node", "dist/ymdev-app/server/main.mjs"]
+CMD ["node", "dist/ymdev-app/server/server.mjs"]
